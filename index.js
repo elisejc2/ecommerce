@@ -2,8 +2,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session'); //middleware
-const authRouter = require('./routes/admin/auth');
-const AdminProductsRouter = require('./routes/admin/products');
+const authRouter = require('./auth');
+const AdminProductsRouter = require('./products');
 const UserProductsRouter = require('./routes/products');
 const cartsRouter = require('./routes/carts');
 
@@ -23,10 +23,7 @@ app.use(AdminProductsRouter);
 app.use(UserProductsRouter);
 app.use(cartsRouter);
 
-//port = 3000
-app.listen(3000, () => {
-    console.log('listening...');
-});
+
 
 //note: for this application to work in the browser make sure to type 'npm run dev' in the terminal
 //and then navigate to localhost:3000
